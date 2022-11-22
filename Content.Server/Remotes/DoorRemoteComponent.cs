@@ -12,5 +12,8 @@ namespace Content.Server.Remotes
             ToggleBolts,
             ToggleEmergencyAccess
         }
+        
+        [DataField("connectTime")]
+        public float connectTime = 0f; #normal door remotes should connect instantly
     }
 }
