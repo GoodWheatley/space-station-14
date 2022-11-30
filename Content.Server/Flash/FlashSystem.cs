@@ -15,6 +15,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Shared.Eye.Blinding;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
 
 namespace Content.Server.Flash
@@ -28,6 +29,7 @@ namespace Content.Server.Flash
         [Dependency] private readonly MetaDataSystem _metaSystem = default!;
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
+        [Dependency] private readonly SharedBlindingSystem _blindingSystem = default!;
 
         public override void Initialize()
         {
@@ -52,7 +54,7 @@ namespace Content.Server.Flash
             args.Handled = true;
             foreach (var e in args.HitEntities)
             {
-                Flash(e, args.User, uid, comp.FlashDuration, comp.SlowTo);
+                Flash(e, args.User, uid, comp.FlashDuration, comp.EyeDamage, comp.SlowTo);
             }
         }
 
@@ -62,7 +64,7 @@ namespace Content.Server.Flash
                 return;
 
             args.Handled = true;
-            FlashArea(uid, args.User, comp.Range, comp.AoeFlashDuration, comp.SlowTo, true);
+            FlashArea(uid, args.User, comp.Range, comp.AoeFlashDuration, comp.AoeEyeDamage, comp.SlowTo, true);
         }
 
         private bool UseFlash(FlashComponent comp, EntityUid user)
@@ -100,7 +102,7 @@ namespace Content.Server.Flash
             return false;
         }
 
-        public void Flash(EntityUid target, EntityUid? user, EntityUid? used, float flashDuration, float slowTo, bool displayPopup = true, FlashableComponent? flashable = null)
+        public void Flash(EntityUid target, EntityUid? user, EntityUid? used, float flashDuration, float slowTo, float eyeDamage, bool displayPopup = true, FlashableComponent? flashable = null)
         {
             if (!Resolve(target, ref flashable, false)) return;
 
@@ -116,7 +118,9 @@ namespace Content.Server.Flash
 
             _stunSystem.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
                 slowTo, slowTo);
-
+                
+            _blindingSystem.AdjustEyeDamage(args.User, eyeDamage, blindable);
+            
             if (displayPopup && user != null && target != user && EntityManager.EntityExists(user.Value))
             {
                 user.Value.PopupMessage(target, Loc.GetString("flash-component-user-blinds-you",
@@ -124,7 +128,7 @@ namespace Content.Server.Flash
             }
         }
 
-        public void FlashArea(EntityUid source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, SoundSpecifier? sound = null)
+        public void FlashArea(EntityUid source, EntityUid? user, float range, float duration, float slowTo = 0.8f, float aoeEyeDamage, bool displayPopup = false, SoundSpecifier? sound = null)
         {
             var transform = EntityManager.GetComponent<TransformComponent>(source);
             var mapPosition = transform.MapPosition;
@@ -146,7 +150,7 @@ namespace Content.Server.Flash
                     continue;
 
                 // They shouldn't have flash removed in between right?
-                Flash(entity, user, source, duration, slowTo, displayPopup, flashableQuery.GetComponent(entity));
+                Flash(entity, user, source, duration, slowTo, aoeEyeDamage, displayPopup, flashableQuery.GetComponent(entity));
             }
             if (sound != null)
             {
