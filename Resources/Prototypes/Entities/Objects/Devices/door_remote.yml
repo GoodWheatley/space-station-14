@@ -4,6 +4,7 @@
   name: door remote
   description: A gadget which can open and bolt doors remotely.
   abstract: true
+  connectRequired: false
   components:
   - type: Sprite
     sprite: Objects/Devices/door_remote.rsi
@@ -138,3 +139,24 @@
   - type: Access
     groups:
     - Engineering
+
+- type: entity
+  parent: DoorRemoteDefault
+  id: AccessTuner
+  name: multitool
+  connectRequired: true
+  connectTime: 3
+  components:
+  - type: Sprite
+    multitool.rsi
+  - type: Access
+    groups:
+    - Command
+    - Security
+    - Medical
+    - Engineering
+    - Research
+    - Cargo
+    - Service
+    - Maintenance
+  
