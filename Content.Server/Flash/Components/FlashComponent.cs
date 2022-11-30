@@ -24,6 +24,14 @@ namespace Content.Server.Flash.Components
         [DataField("slowTo")]
         [ViewVariables(VVAccess.ReadWrite)]
         public float SlowTo { get; set; } = 0.5f;
+        
+        [DataField("eyeDamage")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float EyeDamage { get; set; } = 20f;
+             
+        [DataField("aoeEyeDamage")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float AoeEyeDamage { get; set; } = 10f;
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("sound")]
