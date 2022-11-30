@@ -13,7 +13,11 @@ namespace Content.Server.Remotes
             ToggleEmergencyAccess
         }
         
-        [DataField("connectTime")]
-        public float connectTime = 0f; #normal door remotes should connect instantly
     }
+    
+    [DataField("connectionRequired")]
+    public float connectionRequired = false
+    
+    [DataField("connectTime")]
+    public float connectTime = 3f;
 }
