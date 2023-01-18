@@ -35,6 +35,7 @@ namespace Content.Server.Disease
     public sealed class DiseaseSystem : EntitySystem
     {
         [Dependency] private readonly AudioSystem _audioSystem = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ISerializationManager _serializationManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
@@ -438,6 +439,7 @@ namespace Content.Server.Disease
         /// Plays a sneeze/cough sound and popup if applicable
         /// and then tries to infect anyone in range
         /// if the snougher is not wearing a mask.
+        /// If anyone in range has working internals, then they can't get infected.
         /// </summary>
         public bool SneezeCough(EntityUid uid, DiseasePrototype? disease, string snoughMessage, SoundSpecifier? snoughSound, bool airTransmit = true, TransformComponent? xform = null)
         {
@@ -465,11 +467,15 @@ namespace Content.Server.Disease
 
             var carrierQuery = GetEntityQuery<DiseaseCarrierComponent>();
 
-            foreach (var entity in _lookup.GetEntitiesInRange(xform.MapPosition, 2f))
+            foreach (var entity in _lookup.GetEntitiesInRange(xform.MapPosition, 5f))
             {
                 if (!carrierQuery.TryGetComponent(entity, out var carrier) ||
                     !_interactionSystem.InRangeUnobstructed(uid, entity)) continue;
-
+                 
+                if (_entityManager.TryGetComponent(entity, out InternalsComponent? internals) &&
+                IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<InternalsSystem>().AreInternalsWorking(internals))
+                return;
+                
                 TryInfect(carrier, disease, 0.3f);
             }
             return true;
