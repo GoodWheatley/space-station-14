@@ -16,7 +16,7 @@
   description: uplink-revolver-python-desc
   productEntity: WeaponRevolverPython
   cost:
-    Telecrystal: 8
+    Telecrystal: 6
   categories:
   - UplinkWeapons
 
@@ -70,7 +70,7 @@
   description: uplink-fire-axe-flaming-desc
   productEntity: FireAxeFlaming
   cost:
-    Telecrystal: 10
+    Telecrystal: 8
   categories:
   - UplinkWeapons
 
@@ -82,7 +82,7 @@
   description: uplink-explosive-grenade-desc
   productEntity: ExGrenade
   cost:
-    Telecrystal: 4
+    Telecrystal: 3
   categories:
   - UplinkExplosives
 
@@ -201,11 +201,6 @@
     Telecrystal: 14
   categories:
   - UplinkUtility
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
 
 - type: listing
   id: UplinkHolster
@@ -241,7 +236,7 @@
   id: UplinkJetpack
   name: uplink-black-jetpack-name
   description: uplink-black-jetpack-desc
-  productEntity: JetpackBlack
+  productEntity: JetpackBlackFilled
   cost:
     Telecrystal: 4
   categories:
@@ -264,9 +259,13 @@
   description: uplink-stealth-box-desc
   productEntity: StealthBox
   cost:
-    Telecrystal: 10
+    Telecrystal: 8
   categories:
     - UplinkUtility
+- !type:BuyerWhitelistCondition
+  blacklist:
+    components:
+    - SurplusBundle
 
 #TODO: Increase the price of this to 4-5/remove it when we get encrpytion keys
 - type: listing
@@ -308,14 +307,9 @@
   icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
   productEntity: StorageImplanter
   cost:
-    Telecrystal: 12
+    Telecrystal: 8
   categories:
     - UplinkImplants
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
 
 - type: listing
   id: UplinkFreedomImplanter
@@ -324,14 +318,9 @@
   icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: freedom }
   productEntity: FreedomImplanter
   cost:
-    Telecrystal: 10
+    Telecrystal: 5
   categories:
     - UplinkImplants
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
 
 - type: listing
   id: UplinkMacroBombImplanter
@@ -340,7 +329,7 @@
   icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: explosive }
   productEntity: MacroBombImplanter
   cost:
-    Telecrystal: 25
+    Telecrystal: 20
   categories:
     - UplinkImplants
   conditions:
@@ -348,10 +337,6 @@
       whitelist:
         tags:
           - NukeOpsUplink
-    - !type:BuyerWhitelistCondition
-      blacklist:
-        components:
-          - SurplusBundle
 
 # Bundles
 
@@ -373,7 +358,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Shotguns/bulldog.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledShotgun
   cost:
-    Telecrystal: 25
+    Telecrystal: 20
   categories:
   - UplinkBundles
 
@@ -406,7 +391,7 @@
   icon: { sprite: /Textures/Structures/Wallmounts/signs.rsi, state: bio }
   productEntity: ClothingBackpackDuffelZombieBundle
   cost:
-    Telecrystal: 40
+    Telecrystal: 50
   categories:
   - UplinkBundles
   conditions:
@@ -485,7 +470,7 @@
   description: uplink-duffel-surgery-desc
   productEntity: ClothingBackpackDuffelSyndicateFilledMedical
   cost:
-    Telecrystal: 5
+    Telecrystal: 4
   categories:
   - UplinkTools
 
@@ -671,7 +656,7 @@
   description: uplink-soap-desc
   productEntity: SoapSyndie
   cost:
-    Telecrystal: 1
+    Telecrystal: 2
   categories:
   - UplinkMisc
 
@@ -701,7 +686,7 @@
   description: uplink-nocturine-chemistry-bottle-desc
   productEntity: NocturineChemistryBottle
   cost:
-    Telecrystal: 5
+    Telecrystal: 4
   categories:
   - UplinkMisc
 
@@ -723,15 +708,15 @@
 
  # Pointless
 
-- type: listing
-  id: UplinkRevolverCapGun
-  name: uplink-revolver-cap-gun-name
-  description: uplink-revolver-cap-gun-desc
-  productEntity: RevolverCapGun
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkPointless
+#- type: listing
+#  id: UplinkRevolverCapGun
+#  name: uplink-revolver-cap-gun-name
+#  description: uplink-revolver-cap-gun-desc
+#  productEntity: RevolverCapGun
+#  cost:
+#    Telecrystal: 4
+#  categories:
+#  - UplinkPointless
 
 - type: listing
   id: UplinkSyndicateStamp
