@@ -57,7 +57,7 @@
     walkModifier: 1
     sprintModifier: 1
     enabled: false
-  - type: NoSlip
+  - type: NoSlip # TIL CE magboots are noslips
   - type: StaticPrice
     price: 750
 
@@ -79,7 +79,7 @@
   parent: ClothingShoesBase
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
-  description: Reverse-engineered magnetic boots that have a heavy magnetic pull. Property of Gorlex Marauders.
+  description: Reverse-engineered magnetic boots that do not slow you down. Property of Gorlex Marauders.
   components:
     - type: Sprite
       sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
@@ -95,6 +95,6 @@
         itemIconStyle: NoItem
         event: !type:ToggleActionEvent
     - type: ClothingSpeedModifier
-      walkModifier: 0.85
-      sprintModifier: 0.8
+      walkModifier: 1
+      sprintModifier: 1
       enabled: false
