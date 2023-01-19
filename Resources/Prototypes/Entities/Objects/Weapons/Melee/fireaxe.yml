@@ -45,7 +45,12 @@
   description: Why fight fire with an axe when you can fight with fire and axe?
   components:
   - type: IgniteOnMeleeHit
-    fireStacks: 1
+    fireStacks: 2
+  - type: Tool
+    qualities:
+      - Prying
+    speed: 1.3
+  - type: ToolForcePowered
   - type: Sprite
     sprite: Objects/Weapons/Melee/fireaxeflaming.rsi
     state: icon
