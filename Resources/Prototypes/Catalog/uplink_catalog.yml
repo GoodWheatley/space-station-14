@@ -70,7 +70,7 @@
   description: uplink-fire-axe-flaming-desc
   productEntity: FireAxeFlaming
   cost:
-    Telecrystal: 8
+    Telecrystal: 10
   categories:
   - UplinkWeapons
 
