@@ -1,14 +1,15 @@
 ﻿using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
 using Content.Server.Kitchen.Components;
-using Content.Server.MobState;
 using Content.Shared.Body.Components;
 using Content.Shared.Interaction;
-using Content.Shared.MobState.Components;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
+using Content.Shared.Destructible;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Robust.Server.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -18,6 +19,7 @@ namespace Content.Server.Kitchen.EntitySystems;
 public sealed class SharpSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
+    [Dependency] private readonly SharedDestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
@@ -105,16 +107,12 @@ public sealed class SharpSystem : EntitySystem
             popupType = PopupType.LargeCaution;
 
         _popupSystem.PopupEntity(Loc.GetString("butcherable-knife-butchered-success", ("target", ev.Entity), ("knife", ev.Sharp)),
-            popupEnt, Filter.Entities(ev.User), popupType);
+            popupEnt, ev.User, popupType);
 
         if (hasBody)
-        {
             _bodySystem.GibBody(body!.Owner, body: body);
-        }
-        else
-        {
-            QueueDel(ev.Entity);
-        }
+
+        _destructibleSystem.DestroyEntity(ev.Entity);
     }
 
     private void OnDoafterCancelled(SharpButcherDoafterCancelled ev)
