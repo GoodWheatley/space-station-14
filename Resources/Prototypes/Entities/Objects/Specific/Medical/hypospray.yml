@@ -157,8 +157,8 @@
   description: Contains enough stimulants for you to have the chemical's effect for 5 minutes. Use it when you're sure you're ready to throw down.
   components:
   - type: Item
-  sprite: Objects/Specific/Medical/medipen.rsi
-  size: 10
+    sprite: Objects/Specific/Medical/medipen.rsi
+    size: 10
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -176,8 +176,8 @@
   description: A microinjector of stimulants that give you about one minute of the chemical's effects.
   components:
   - type: Item
-  sprite: Objects/Specific/Medical/medipen.rsi
-  size: 5
+    sprite: Objects/Specific/Medical/medipen.rsi
+    size: 5
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -195,8 +195,8 @@
   description: There's a red label on the side of it. It says "PRODUCT HAS EXTREME SIDE EFFECTS, PRODUCTION HALTED. DO NOT DISTRIBUTE."
   components:
   - type: Item
-  sprite: Objects/Specific/Medical/medipen.rsi
-  size: 10
+    sprite: Objects/Specific/Medical/medipen.rsi
+    size: 10
   - type: SolutionContainerManager
     solutions:
       pen:
