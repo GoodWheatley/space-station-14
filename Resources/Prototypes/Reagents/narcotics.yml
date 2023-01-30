@@ -136,7 +136,7 @@
           conditions:
           - !type:TotalDamage
             min: 70
-            max: 120 # you've got a chance to get out of crit 
+            max: 120 # you've got a chance to get out of crit
           damage: # heals at the same rate as tricordrazine, doesn't heal poison because if you OD'd I'm not giving you a safety net
             groups:
               Burn: -0.2
@@ -222,19 +222,19 @@
               Burn: -1
         # stops CMOs from hypoing you with lexorin and sec from filling you with tranq shells
         - !type:AdjustReagent
-        conditions:
-        - !type:ReagentThreshold
+          conditions:
+          - !type:ReagentThreshold
+            reagent: Lexorin
+            min: 1
           reagent: Lexorin
-          min: 1
-        reagent: Lexorin
-        amount: -3
+          amount: -3
         - !type:AdjustReagent
-        conditions:
-        - !type:ReagentThreshold
+          conditions:
+          - !type:ReagentThreshold
+            reagent: ChloralHydrate
+            min: 1
           reagent: ChloralHydrate
-          min: 1
-        reagent: ChloralHydrate
-        amount: -3
+          amount: -3
 
 - type: reagent
   id: THC
