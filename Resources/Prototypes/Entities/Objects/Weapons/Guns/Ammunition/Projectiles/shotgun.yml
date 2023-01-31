@@ -29,7 +29,7 @@
         Blunt: 30
         
 ﻿- type: entity
-  id: PelletShotgunSlugSyndicate
+  id: PelletShotgunSlugMeteorslug
   name: pellet (.50 meteorslug)
   noSpawn: true
   parent: BaseBullet
