@@ -412,6 +412,22 @@
       whitelist:
         tags:
           - NukeOpsUplink
+          
+- type: listing
+  id: UplinkSniperRifleBundle
+  name: uplink-sniper-rifle-bundle-name
+  description: uplink-sniper-rifle-bundle-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Launchers/heavy_sniper.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateFilledSniperRifle
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkBundles
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkL6SawBundle
