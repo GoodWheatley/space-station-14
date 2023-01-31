@@ -67,6 +67,7 @@
     quickEquip: false
     slots:
     - Back
+    - Belt
     - suitStorage
   - type: Gun
     fireRate: 2
@@ -110,7 +111,10 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 1
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
