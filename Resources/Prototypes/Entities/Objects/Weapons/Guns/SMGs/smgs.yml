@@ -91,6 +91,9 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
   - type: Gun
+    angleIncrease: 2
+    angleDecay: 8
+    fireRate: 6
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
   - type: ChamberMagazineAmmoProvider
@@ -173,7 +176,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
   - type: Gun
-    fireRate: 5
+    fireRate: 8
     selectedMode: FullAuto
     availableModes:
     - FullAuto
