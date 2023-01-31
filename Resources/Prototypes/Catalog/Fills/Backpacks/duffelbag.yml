@@ -48,20 +48,20 @@
   parent: ClothingBackpackDuffelSyndicateAmmoBundle
   id: ClothingBackpackDuffelSyndicateFilledShotgun
   name: Bulldog bundle
-  description: "Lean and mean: Contains the popular Bulldog Shotgun, a 12g beanbag drum and 2 12g buckshot drums." #, and a pair of Thermal Imaging Goggles.
+  description: "Lean and mean: Contains the popular Bulldog Shotgun, and 2 extra buckshot drums." #, and a pair of Thermal Imaging Goggles.
   components:
   - type: StorageFill
     contents:
       - id: WeaponShotgunBulldog
       - id: MagazineShotgun
-      - id: MagazineShotgunBeanbag
+      - id: MagazineShotgun
 #     - id: ThermalImagingGoggles
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateAmmoBundle
   id: ClothingBackpackDuffelSyndicateFilledSMG
   name: C-20r bundle
-  description: "Old faithful: The classic C-20r Submachine Gun, bundled with three magazines." #, and a Suppressor.
+  description: "Old faithful: The classic C-20r Submachine Gun, bundled with two magazines." #, and a Suppressor.
   components:
   - type: StorageFill
     contents:
@@ -92,6 +92,7 @@
     contents:
       - id: WeaponLightMachineGunL6
       - id: MagazineLightRifleBox
+      - id: MagazineLightRifleBox
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateAmmoBundle
@@ -103,9 +104,23 @@
     contents:
       - id: WeaponLauncherChinaLake
       - id: GrenadeBlast
-        amount: 4
+        amount: 3
       - id: GrenadeFrag
-        amount: 4
+        amount: 3
+      - id: GrenadeFlash
+        amount: 2
+        
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmoBundle
+  id: ClothingBackpackDuffelSyndicateFilledSniperRifle
+  name: Hristov bundle
+  description: "Become a real sniper elite with the Hristov anti-material rifle, bundled with two extra speedloaders."
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSniperHristov
+      - id: SpeedLoaderSniperRifle
+        amount: 2
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateAmmoBundle
