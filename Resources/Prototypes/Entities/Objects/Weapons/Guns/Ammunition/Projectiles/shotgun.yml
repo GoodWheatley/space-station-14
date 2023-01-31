@@ -44,6 +44,21 @@
         Blunt: 10
   - type: StaminaDamageOnCollide
     damage: 120
+    
+﻿- type: entity
+  id: PelletShotgunSlugPulse
+  name: pellet (.50 pulse slug)
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: slug
+  - type: Projectile
+    damage:
+      types:
+        Burn: 40
+        Structural: 80
 
 - type: entity
   id: PelletShotgunBeanbag
