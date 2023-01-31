@@ -16,7 +16,7 @@
     - Back
   - type: Gun
     minAngle: 4
-    maxAngle: 20
+    maxAngle: 16
     angleIncrease: 4
     angleDecay: 16
     fireRate: 8
