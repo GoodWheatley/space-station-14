@@ -268,16 +268,16 @@
   categories:
     - UplinkUtility
 
-#TODO: Increase the price to 4 when flashbang prof.
-- type: listing
-  id: UplinkHeadset
-  name: uplink-headset-name
-  description: uplink-headset-desc
-  productEntity: ClothingHeadsetAltSyndicate
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkUtility
+# Commented out because encryption keys make this irrelevant
+#- type: listing
+#  id: UplinkHeadset
+#  name: uplink-headset-name
+#  description: uplink-headset-desc
+#  productEntity: ClothingHeadsetAltSyndicate
+#  cost:
+#    Telecrystal: 4
+#  categories:
+#  - UplinkUtility
 
 - type: listing
   id: UplinkHeadsetEncryptionKey
@@ -732,7 +732,8 @@
       - SurplusBundle
 
  # Pointless
-
+ 
+# this is already mapped and can be won in arcade machines, why does this exist
 - type: listing
   id: UplinkRevolverCapGun
   name: uplink-revolver-cap-gun-name
