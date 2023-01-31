@@ -68,6 +68,22 @@
     state: "slug"
 
 - type: entity
+  id: ShellShotgunSlugMeteorslug
+  name: .50 meteorslug
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: slug
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSlugMeteorslug
+    count: 1
+    spread: 5
+  - type: SpentAmmoVisuals
+    state: "slug"
+
+- type: entity
   id: ShellShotgunFlare
   name: .50 flare shell
   parent: BaseShellShotgun
@@ -106,11 +122,25 @@
   - type: CartridgeAmmo
     proto: PelletShotgun
     count: 8
+    spread: 15
+    
+- type: entity
+  id: ShellShotgunFlechette
+  name: .50 flechette
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunFlechette
+    count: 6
     spread: 10
 
 - type: entity
   id: ShellShotgunIncendiary
-  name: .50 incendiary shell
+  name: .50 incendiary slug
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -119,6 +149,22 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunIncendiary
+  - type: SpentAmmoVisuals
+    state: "incendiary"
+    
+- type: entity
+  id: ShellShotgunDragonsBreath
+  name: .50 dragon's breath
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: incendiary
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunDragonsBreath
+    count: 5
+    spread: 20
   - type: SpentAmmoVisuals
     state: "incendiary"
 
