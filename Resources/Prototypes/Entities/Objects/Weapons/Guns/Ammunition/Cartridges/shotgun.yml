@@ -82,6 +82,21 @@
     spread: 5
   - type: SpentAmmoVisuals
     state: "slug"
+    
+- type: entity
+  id: ShellShotgunSlugPulse
+  name: .50 pulse slug
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: slug
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSlugPulse
+    count: 1
+  - type: SpentAmmoVisuals
+    state: "slug"
 
 - type: entity
   id: ShellShotgunFlare
