@@ -52,8 +52,8 @@
     modifiers:
       coefficients:
         Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.4
+        Slash: 0.8
+        Piercing: 0.6
         Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.9
