@@ -114,6 +114,7 @@
     whitelist:
       tags:
       - CartridgePistol
+    capacity: 40
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
     netsync: false
