@@ -10,7 +10,40 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 8  # Should have the same or less damage than a regular pellet
+        Piercing: 24
+        Blunt: 24
+        
+﻿- type: entity
+  id: PelletShotgunSlugSyndicate
+  name: pellet (.50 syndicate slug)
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: slug
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+        Blunt: 30
+        
+﻿- type: entity
+  id: PelletShotgunSlugSyndicate
+  name: pellet (.50 meteorslug)
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: slug
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Blunt: 10
+  - type: StaminaDamageOnCollide
+    damage: 120
 
 - type: entity
   id: PelletShotgunBeanbag
@@ -41,10 +74,27 @@
     damage:
       types:
         Piercing: 12
+ 
+- type: entity
+  id: PelletShotgunFlechette
+  name: pellet (.50 flechette)
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 7.5
+        Slash: 7.5
+  - type: StaminaDamageOnCollide
+    damage: 10
 
 - type: entity
   id: PelletShotgunIncendiary
-  name: pellet (.50 incendiary)
+  name: pellet (.50 incendiary slug)
   noSpawn: true
   parent: BaseBullet
   components:
@@ -54,7 +104,7 @@
   - type: Projectile
     damage:
       groups:
-        Burn: 7
+        Burn: 5
   - type: PointLight
     enabled: true
     color: "#ff4300"
@@ -62,6 +112,27 @@
     energy: 7.0
   - type: IgniteOnCollide
     fireStacks: 1
+    
+ - type: entity
+  id: PelletShotgunDragonsBreath
+  name: pellet (.50 dragon's breath)
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot-flare
+  - type: Projectile
+    damage:
+      groups:
+        Burn: 8
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
+    radius: 2.0
+    energy: 7.0
+  - type: IgniteOnCollide
+    fireStacks: 2
 
 - type: entity
   id: PelletShotgunPractice
@@ -116,11 +187,11 @@
   - type: Projectile
     damage:
       groups:
-        Burn: 14
+        Burn: 8
   - type: PointLight
     enabled: true
     color: "#FF8080"
     radius: 15.0
     energy: 9.0
   - type: IgniteOnCollide
-    fireStacks: 4
+    fireStacks: 2
