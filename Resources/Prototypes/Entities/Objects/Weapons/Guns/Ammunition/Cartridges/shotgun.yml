@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: BaseShellShotgun
-  name: shell (.50)
+  name: .50 shell
   parent: BaseCartridge
   abstract: true
   components:
@@ -24,7 +24,7 @@
 
 - type: entity
   id: ShellShotgunBeanbag
-  name: shell (.50 beanbag)
+  name: .50 beanbag shell
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -39,7 +39,7 @@
 
 - type: entity
   id: ShellShotgunSlug
-  name: shell (.50 slug)
+  name: .50 slug
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -48,14 +48,28 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSlug
-    count: 4
-    spread: 5
+    count: 1
+  - type: SpentAmmoVisuals
+    state: "slug"
+    
+- type: entity
+  id: ShellShotgunSlugSyndicate
+  name: .50 syndicate slug
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: slug
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSlugSyndicate
+    count: 1
   - type: SpentAmmoVisuals
     state: "slug"
 
 - type: entity
   id: ShellShotgunFlare
-  name: shell (.50 flare)
+  name: .50 flare shell
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -69,8 +83,8 @@
     state: "flare"
 
 - type: entity
-  id: ShellShotgun
-  name: shell (.50)
+  id: ShellShotgunBuckshot
+  name: .50 buckshot
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -79,10 +93,24 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgun
+    
+- type: entity
+  id: ShellShotgunBuckshotSyndicate
+  name: .50 syndicate buckshot
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgun
+    count: 8
+    spread: 10
 
 - type: entity
   id: ShellShotgunIncendiary
-  name: shell (.50 incendiary)
+  name: .50 incendiary shell
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -96,7 +124,7 @@
 
 - type: entity
   id: ShellShotgunPractice
-  name: shell (.50 practice)
+  name: .50 practice shell
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -110,7 +138,7 @@
 
 - type: entity
   id: ShellTranquilizer
-  name: shell (.50 tranquilizer)
+  name: .50 tranquilizer shell
   parent: BaseShellShotgun
   components:
   - type: Sprite
