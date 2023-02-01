@@ -38,6 +38,38 @@
     proto: BulletPistolHighVelocity
 
 - type: entity
+  id: CartridgePistolFreezeburn
+  name: cartridge (.35 auto freezeburn)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolFreezeburn
+
+- type: entity
+  id: CartridgePistolIncendiary
+  name: cartridge (.35 auto incendiary)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolIncendiary
+    
+- type: entity
+  id: CartridgePistolRadioactive
+  name: cartridge (.35 auto radioactive)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolRadioactive
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Uranium
+          Quantity: 4
+  - type: SolutionTransfer
+    maxTransferAmount: 4
+
+- type: entity
   id: CartridgePistolPractice
   name: cartridge (.35 auto practice)
   parent: BaseCartridgePistol
