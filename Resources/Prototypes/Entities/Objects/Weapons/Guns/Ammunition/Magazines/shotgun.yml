@@ -35,15 +35,44 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineShotgun
-  name: ammo drum (.50 pellet)
+  id: MagazineShotgunBuckshot
+  name: ammo drum (.50 buckshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
-    proto: ShellShotgun
+    proto: ShellShotgunBuckshot
   - type: Sprite
     layers:
     - state: pellets
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      
+
+- type: entity
+  id: MagazineShotgunBuckshotSyndicate
+  name: ammo drum (.50 syndicate buckshot)
+  parent: BaseMagazineShotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBuckshotSyndicate
+  - type: Sprite
+    layers:
+    - state: pellets
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      
+- type: entity
+  id: MagazineShotgunFlechette
+  name: ammo drum (.50 flechette)
+  parent: BaseMagazineShotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunFlechette
+  - type: Sprite
+    layers:
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -75,6 +104,48 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+      
+- type: entity
+  id: MagazineShotgunSlugSyndicate
+  name: ammo drum (.50 syndicate slug)
+  parent: BaseMagazineShotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunSlugSyndicate
+  - type: Sprite
+    layers:
+    - state: slug
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      
+- type: entity
+  id: MagazineShotgunMeteorslug
+  name: ammo drum (.50 meteorslug)
+  parent: BaseMagazineShotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunMeteorslug
+  - type: Sprite
+    layers:
+    - state: slug
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      
+- type: entity
+  id: MagazineShotgunSlugPulse
+  name: ammo drum (.50 pulse slug)
+  parent: BaseMagazineShotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunSlugPulse
+  - type: Sprite
+    layers:
+    - state: slug
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   id: MagazineShotgunIncendiary
@@ -83,6 +154,21 @@
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunIncendiary
+  - type: Sprite
+    layers:
+    - state: slug
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+
+- type: entity
+  id: MagazineShotgunDragonsBreath
+  name: ammo drum (.50 dragon's breath)
+  parent: BaseMagazineShotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunDragonsBreath
   - type: Sprite
     layers:
     - state: slug
