@@ -21,6 +21,62 @@
         Piercing: 19
 
 - type: entity
+  id: BulletPistolFreezeburn
+  name: bullet (.35 auto freezeburn)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Cold: 10
+  - type: StaminaDamageOnCollide
+    damage: 15
+    
+- type: entity
+  id: BulletPistolIncendiary
+  name: bullet (.35 auto incendiary)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Burn: 5
+        Piercing: 5
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
+    radius: 2.0
+    energy: 7.0
+  - type: IgniteOnCollide
+    fireStacks: 1
+
+- type: entity
+  id: BulletPistolRadioactive
+  name: bullet (.35 auto radioactive)
+  noSpawn: true
+  parent: BaseBulletPractice
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 4
+  - type: RefillableSolution
+    solution: ammo
+  - type: DrainableSolution
+    solution: ammo
+  - type: SolutionInjectOnCollide
+    transferAmount: 4
+    blockSlots: NONE
+  - type: InjectableSolution
+    solution: ammo
+
+- type: entity
   id: BulletPistolPractice
   name: bullet (.35 auto practice)
   parent: BaseBulletPractice
@@ -41,3 +97,5 @@
     damage:
       types:
         Blunt: 3
+  - type: StaminaDamageOnCollide
+    damage: 22
