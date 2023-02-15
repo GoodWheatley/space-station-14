@@ -111,6 +111,8 @@
       - id: RubberStampCE
       - id: JetpackVoidFilled
       - id: RCD
+      - id: RCDAmmo
+        amount: 3
       - id: ClothingHeadsetAltEngineering
 
 - type: entity
