@@ -168,6 +168,9 @@
         prob: 0.15
       - id: DoorRemoteEngineering
       - id: RubberStampCE
+      - id: RCD
+      - id: RCDAmmo
+        amount: 3
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
 
@@ -317,6 +320,7 @@
       - id: JetpackSecurityFilled
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
+      - id: PinpointerNuclear
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -360,3 +364,4 @@
       - id: SecurityTechFabCircuitboard
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
+      - id: PinpointerNuclear
