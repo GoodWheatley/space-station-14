@@ -117,7 +117,6 @@
       prototype: NukeDisk
       owner: objective-condition-steal-station
 
-
 - type: objective
   id: IDComputerBoardStealObjective
   issuer: syndicate
@@ -290,6 +289,8 @@
   conditions:
     - !type:StealCondition
       prototype: ClothingOuterArmorCaptainCarapace
+
+# ADD ALL THE DOOR REMOTES WHEN YOU GET HOME
 
 - type: objective
   id: EscapeShuttleObjective
