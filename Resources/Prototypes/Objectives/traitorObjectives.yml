@@ -256,7 +256,7 @@
     - !type:NotRoleRequirement
       roleId: ChiefEngineer
     - !type:NotRoleRequirement
-      roleId: AtmosphericsTechnician
+      roleId: AtmosphericTechnician
   conditions:
     - !type:StealCondition
       prototype: FireAxe
