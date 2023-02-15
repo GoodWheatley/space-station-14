@@ -249,7 +249,7 @@
     - !type:IncompatibleConditionsRequirement
       conditions:
         - DieCondition
-    # While any head can get into the bridge, only the Captain and CE have the necessary access to open the fire axe cabinet
+    # While any head can get into the bridge, only the Captain and CE have the necessary access to open the fire axe cabinet in there
     - !type:NotRoleRequirement
       roleId: Captain
     - !type:NotRoleRequirement
@@ -290,7 +290,111 @@
     - !type:StealCondition
       prototype: ClothingOuterArmorCaptainCarapace
 
-# ADD ALL THE DOOR REMOTES WHEN YOU GET HOME
+- type: objective
+  id: DoorRemoteCommandStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Captain
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteCommand
+      owner: job-name-captain
+
+- type: objective
+  id: DoorRemoteSecurityStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: HeadOfSecurity
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteSecurity
+      owner: job-name-hos
+
+
+- type: objective
+  id: DoorRemoteServiceStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: HeadOfPersonnel
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteService
+      owner: job-name-hop
+
+- type: objective
+  id: DoorRemoteResearchStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: ResearchDirector
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteResearch
+      owner: job-name-rd
+
+- type: objective
+  id: DoorRemoteCargoStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Quartermaster
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteCargo
+      owner: job-name-qm
+
+- type: objective
+  id: DoorRemoteMedicalStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: ChiefMedicalOfficer
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteMedical
+      owner: job-name-cmo
+
+- type: objective
+  id: DoorRemoteEngineeringStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: ChiefEngineer
+  conditions:
+    - !type:StealCondition
+      prototype: DoorRemoteEngineering
+      owner: job-name-ce
 
 - type: objective
   id: EscapeShuttleObjective
