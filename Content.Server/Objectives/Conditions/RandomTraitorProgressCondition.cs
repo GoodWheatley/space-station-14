@@ -99,7 +99,7 @@ namespace Content.Server.Objectives.Conditions
             }
         }
 
-        public float Difficulty => 2.5f;
+        public float Difficulty => 3f;
 
         public bool Equals(IObjectiveCondition? other)
         {
