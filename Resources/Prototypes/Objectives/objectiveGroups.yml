@@ -12,21 +12,33 @@
   weights:
     CaptainIDStealObjective: 1
     CMOHyposprayStealObjective: 1
-    RDHardsuitStealObjective: 1
+    RDHardsuitStealObjective: 0.75
     NukeDiskStealObjective: 1
     IDComputerBoardStealObjective: 1
     MagbootsStealObjective: 1
-#   SupplyConsoleBoardStealObjective: 1
-#   CorgiMeatStealObjective: 1
-    CaptainGunStealObjective: 0.5
+    CaptainGunStealObjective: 1
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 1
+    RCDStealObjective: 1
+    GoldmedalStealObjective: 1
+    BronzeheartStealObjective: 1
+    BeretHoSStealObjective: 0.5
+    FireAxeStealObjective: 0.75
+    CaptainSabreStealObjective: 1
+    CaptainCarapaceStealObjective: 1
+    DoorRemoteCommandStealObjective: 0.5
+    DoorRemoteSecurityStealObjective: 0.5
+    DoorRemoteServiceStealObjective: 0.5
+    DoorRemoteResearchStealObjective: 0.5
+    DoorRemoteCargoStealObjective: 0.5
+    DoorRemoteMedicalStealObjective: 0.5
+    DoorRemoteEngineeringStealObjective: 0.5
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
   weights:
     KillRandomObjective: 1
-
+    
 - type: weightedRandom
   id: TraitorObjectiveGroupState
   weights:
@@ -37,6 +49,6 @@
   id: TraitorObjectiveGroupSocial
   weights:
     RandomTraitorAliveObjective: 1
-    RandomTraitorProgressObjective: 0.75
+    RandomTraitorProgressObjective: 1
 
 #Changeling, crew, wizard, when you code it...
