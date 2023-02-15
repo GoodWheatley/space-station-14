@@ -1,18 +1,3 @@
-﻿- type: objective
-  id: CaptainIDStealObjective
-  issuer: syndicate
-  difficultyOverride: 2.75
-  requirements:
-    - !type:TraitorRequirement {}
-    - !type:IncompatibleConditionsRequirement
-      conditions:
-        - DieCondition
-    - !type:NotRoleRequirement
-      roleId: Captain
-  conditions:
-    - !type:StealCondition
-      prototype: CaptainIDCard
-
 - type: objective
   id: KillRandomObjective
   issuer: syndicate
@@ -49,11 +34,26 @@
         - EscapeShuttleCondition
   conditions:
     - !type:DieCondition {}
+    
+- type: objective
+  id: CaptainIDStealObjective
+  issuer: syndicate
+  difficultyOverride: 2.5
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Captain
+  conditions:
+    - !type:StealCondition
+      prototype: CaptainIDCard
 
 - type: objective
   id: CMOHyposprayStealObjective
   issuer: syndicate
-  difficultyOverride: 2.75
+  difficultyOverride: 2.5
   requirements:
     - !type:TraitorRequirement {}
     - !type:IncompatibleConditionsRequirement
@@ -85,7 +85,6 @@
 - type: objective
   id: HandTeleporterStealObjective
   issuer: syndicate
-  difficultyOverride: 2.75
   requirements:
   - !type:TraitorRequirement {}
   - !type:IncompatibleConditionsRequirement
@@ -100,6 +99,7 @@
 
 - type: objective
   id: NukeDiskStealObjective
+  difficultyOverride: 3
   issuer: syndicate
   requirements:
     - !type:TraitorRequirement {}
@@ -112,12 +112,6 @@
       roleId: HeadOfSecurity
     - !type:NotRoleRequirement
       roleId: HeadOfPersonnel
-    - !type:NotRoleRequirement
-      roleId: ChiefEngineer
-    - !type:NotRoleRequirement
-      roleId: ChiefMedicalOfficer
-    - !type:NotRoleRequirement
-      roleId: ResearchDirector
   conditions:
     - !type:StealCondition
       prototype: NukeDisk
@@ -142,7 +136,7 @@
 - type: objective
   id: MagbootsStealObjective
   issuer: syndicate
-  difficultyOverride: 2.75
+  difficultyOverride: 2.5
   requirements:
     - !type:TraitorRequirement {}
     - !type:IncompatibleConditionsRequirement
@@ -156,39 +150,9 @@
       owner: job-name-ce
 
 - type: objective
-  id: SupplyConsoleBoardStealObjective
-  issuer: syndicate
-  requirements:
-    - !type:TraitorRequirement {}
-    - !type:IncompatibleConditionsRequirement
-      conditions:
-        - DieCondition
-    - !type:NotRoleRequirement
-      roleId: Quartermaster
-  conditions:
-    - !type:StealCondition
-      prototype: CargoRequestComputerCircuitboard
-      owner: job-name-qm
-
-- type: objective
-  id: CorgiMeatStealObjective
-  issuer: syndicate
-  requirements:
-    - !type:TraitorRequirement {}
-    - !type:IncompatibleConditionsRequirement
-      conditions:
-        - DieCondition
-    - !type:NotRoleRequirement
-      roleId: HeadOfPersonnel
-  conditions:
-    - !type:StealCondition
-      prototype: FoodMeatCorgi
-      owner: objective-condition-steal-Ian
-
-- type: objective
   id: CaptainGunStealObjective
   issuer: syndicate
-  difficultyOverride: 2.75
+  difficultyOverride: 2.5
   requirements:
     - !type:TraitorRequirement {}
     - !type:IncompatibleConditionsRequirement
@@ -204,7 +168,6 @@
 - type: objective
   id: CaptainJetpackStealObjective
   issuer: syndicate
-  difficultyOverride: 2.75
   requirements:
     - !type:TraitorRequirement {}
     - !type:IncompatibleConditionsRequirement
@@ -215,6 +178,118 @@
   conditions:
     - !type:StealCondition
       prototype: JetpackCaptainFilled
+
+- type: objective
+  id: RCDStealObjective
+  issuer: syndicate
+  difficultyOverride: 2.5
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: ChiefEngineer
+  conditions:
+    - !type:StealCondition
+      prototype: RCD #TODO: this should also check for an empty RCD
+      owner: job-name-ce
+
+- type: objective
+  id: GoldmedalStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Captain
+    - !type:NotRoleRequirement
+      roleId: HeadOfPersonnel
+  conditions:
+    - !type:StealCondition
+      prototype: ClothingNeckGoldmedal
+      owner: job-name-captain
+
+- type: objective
+  id: BronzeheartStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Captain
+  conditions:
+    - !type:StealCondition
+      prototype: ClothingNeckBronzeheart
+      owner: job-name-captain
+      
+- type: objective
+  id: BeretHoSStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: HeadOfSecurity
+  conditions:
+    - !type:StealCondition
+      prototype: ClothingHeadHatBeretHoS
+
+- type: objective
+  id: FireAxeStealObjective
+  issuer: syndicate
+  difficultyOverride: 3 # you have to be holding it or have it on your back to accomplish this
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    # While any head can get into the bridge, only the Captain and CE have the necessary access to open the fire axe cabinet
+    - !type:NotRoleRequirement
+      roleId: Captain
+    - !type:NotRoleRequirement
+      roleId: ChiefEngineer
+    - !type:NotRoleRequirement
+      roleId: AtmosphericsTechnician
+  conditions:
+    - !type:StealCondition
+      prototype: FireAxe
+
+- type: objective
+  id: CaptainSabreStealObjective
+  issuer: syndicate
+  difficultyOverride: 2.25
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Captain
+  conditions:
+    - !type:StealCondition
+      prototype: CaptainSabre
+
+- type: objective
+  id: CaptainCarapaceStealObjective
+  issuer: syndicate
+  difficultyOverride: 2.5
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: Captain
+  conditions:
+    - !type:StealCondition
+      prototype: ClothingOuterArmorCaptainCarapace
 
 - type: objective
   id: EscapeShuttleObjective
