@@ -23,7 +23,7 @@
     GoldmedalStealObjective: 1
     BronzeheartStealObjective: 1
     BeretHoSStealObjective: 0.5
-    FireAxeStealObjective: 0.75
+    FireAxeStealObjective: 1
     CaptainSabreStealObjective: 1
     CaptainCarapaceStealObjective: 1
     DoorRemoteCommandStealObjective: 0.5
@@ -38,12 +38,16 @@
   id: TraitorObjectiveGroupKill
   weights:
     KillRandomObjective: 1
-    
+    KillRandomTraitorObjective: 0.5
+    MaroonRandomObjective: 0.75
+
 - type: weightedRandom
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 1
-    DieObjective: 0.1
+    DieObjective: 0.25
+    StayAliveObjective: 0.5
+    HijackObjective: 0.5
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial

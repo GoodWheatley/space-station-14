@@ -11,6 +11,31 @@
   canBeDuplicate: true
 
 - type: objective
+  id: KillRandomTraitorObjective
+  difficultyOverride: 3
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - RandomTraitorAliveCondition
+  conditions:
+    - !type:KillRandomTraitorCondition {}
+  canBeDuplicate: true
+
+- type: objective
+  id: MaroonRandomObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - RandomTraitorAliveCondition
+  conditions:
+    - !type:MaroonRandomPersonCondition {}
+  canBeDuplicate: true
+
+- type: objective
   id: RandomTraitorAliveObjective
   issuer: syndicate
   requirements:
@@ -18,6 +43,8 @@
     - !type:IncompatibleConditionsRequirement
         conditions:
           - KillRandomPersonCondition
+          - KillRandomTraitorCondition
+          - MaroonRandomPersonCondition
     - !type:MultipleTraitorsRequirement
   conditions:
     - !type:RandomTraitorAliveCondition {}
@@ -32,9 +59,10 @@
       conditions:
         - StealCondition
         - EscapeShuttleCondition
+        - StayAliveCondition
   conditions:
     - !type:DieCondition {}
-    
+
 - type: objective
   id: CaptainIDStealObjective
   issuer: syndicate
@@ -225,7 +253,7 @@
     - !type:StealCondition
       prototype: ClothingNeckBronzeheart
       owner: job-name-captain
-      
+
 - type: objective
   id: BeretHoSStealObjective
   issuer: syndicate
@@ -404,8 +432,21 @@
     - !type:IncompatibleConditionsRequirement
       conditions:
         - DieCondition
+        - StayAliveCondition
   conditions:
     - !type:EscapeShuttleCondition {}
+
+- type: objective
+  id: StayAliveObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+        - EscapeShuttleCondition
+  conditions:
+    - !type:StayAliveCondition {}
 
 - type: objective
   id: RandomTraitorProgressObjective
