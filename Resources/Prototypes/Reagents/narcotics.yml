@@ -184,15 +184,6 @@
           max: 10 # ghetto withdrawal
         key: Stutter
         component: StutteringAccent
-      - !type:GenericStatusEffect
-        conditions:
-        - !type:ReagentThreshold
-          max: 10 # ghetto withdrawal
-        key: SeeingRainbows
-        component: SeeingRainbows
-        type: Add
-        time: 1.5
-        refresh: false
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
