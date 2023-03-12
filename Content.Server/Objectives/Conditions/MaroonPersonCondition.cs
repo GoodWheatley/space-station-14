@@ -71,7 +71,6 @@ namespace Content.Server.Objectives.Conditions
                         break;
                     }
                 }
-
                 return (shuttleContainsTarget && targetIsAlive && targetIsEscaping) ? 0f : 1f;
             }
         }

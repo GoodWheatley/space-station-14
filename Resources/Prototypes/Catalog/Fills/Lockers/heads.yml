@@ -284,6 +284,7 @@
   - type: StorageFill
     contents:
       - id: WeaponDisabler
+      - id: PinpointerNuclear
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatHoshat
       - id: ClothingNeckCloakHos

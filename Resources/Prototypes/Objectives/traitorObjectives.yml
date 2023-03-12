@@ -177,6 +177,22 @@
       owner: job-name-ce
 
 - type: objective
+  id: VoidJetpackStealObjective
+  issuer: syndicate
+  difficultyOverride: 2.5
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: ChiefEngineer
+  conditions:
+    - !type:StealCondition
+      prototype: JetpackVoidFilled
+      owner: job-name-ce
+
+- type: objective
   id: CaptainGunStealObjective
   issuer: syndicate
   difficultyOverride: 2.5
@@ -219,7 +235,7 @@
       roleId: ChiefEngineer
   conditions:
     - !type:StealCondition
-      prototype: RCD #TODO: this should also check for an empty RCD
+      prototype: RCD
       owner: job-name-ce
 
 - type: objective

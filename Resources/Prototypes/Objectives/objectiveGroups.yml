@@ -16,6 +16,7 @@
     NukeDiskStealObjective: 1
     IDComputerBoardStealObjective: 1
     MagbootsStealObjective: 1
+    VoidJetpackStealObjective: 1
     CaptainGunStealObjective: 1
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 1
@@ -47,7 +48,7 @@
     EscapeShuttleObjective: 1
     DieObjective: 0.25
     StayAliveObjective: 0.5
-    HijackObjective: 0.5
+    HijackObjective: 0.25
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial

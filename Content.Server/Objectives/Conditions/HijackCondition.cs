@@ -1,11 +1,8 @@
-using Content.Server.Cuffs.Components;
-using Content.Server.Mind.Components;
 using Content.Server.Objectives.Interfaces;
 using Content.Server.Station.Components;
 using Content.Server.Traitor;
 using JetBrains.Annotations;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Objectives.Conditions
@@ -50,7 +47,7 @@ namespace Content.Server.Objectives.Conditions
             if (shuttle == null)
                 return false;
 
-            var entMan = IoCManager.Resolve<IEntityManager>(<TraitorRole>(_mind.CharacterDeadIC));
+            var entMan = IoCManager.Resolve<IEntityManager>(<TraitorRole>_mind.CharacterDeadIC);
 
             if (!entMan.TryGetComponent<MapGridComponent>(shuttle, out var shuttleGrid) ||
                 !entMan.TryGetComponent<TransformComponent>(shuttle, out var shuttleXform))
@@ -63,7 +60,8 @@ namespace Content.Server.Objectives.Conditions
         }
         public float Progress
         {
-            get {
+            get
+            {
                 var entMan = IoCManager.Resolve<IEntityManager>();
 
                 if (_mind?.OwnedEntity == null
