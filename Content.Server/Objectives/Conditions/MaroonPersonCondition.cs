@@ -71,6 +71,13 @@ namespace Content.Server.Objectives.Conditions
                         break;
                     }
                 }
+
+                if (Target.CharacterDeadIC)
+                    return 1f;
+
+                if (!shuttleContainsTarget)
+                    return 1f;
+
                 return (shuttleContainsTarget && targetIsAlive && targetIsEscaping) ? 0f : 1f;
             }
         }
