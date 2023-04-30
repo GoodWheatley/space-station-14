@@ -285,6 +285,20 @@
       prototype: ClothingHeadHatBeretHoS
 
 - type: objective
+  id: HatHoPStealObjective
+  issuer: syndicate
+  requirements:
+    - !type:TraitorRequirement {}
+    - !type:IncompatibleConditionsRequirement
+      conditions:
+        - DieCondition
+    - !type:NotRoleRequirement
+      roleId: HeadOfPersonnel
+  conditions:
+    - !type:StealCondition
+      prototype: ClothingHeadHatHopcap
+
+- type: objective
   id: FireAxeStealObjective
   issuer: syndicate
   difficultyOverride: 3 # you have to be holding it or have it on your back to accomplish this
@@ -293,7 +307,7 @@
     - !type:IncompatibleConditionsRequirement
       conditions:
         - DieCondition
-    # While any head can get into the bridge, only the Captain and CE have the necessary access to open the fire axe cabinet in there
+    # While any head can get into the bridge, only the Captain and CE have the necessary access to open the fire axe cabinet
     - !type:NotRoleRequirement
       roleId: Captain
     - !type:NotRoleRequirement

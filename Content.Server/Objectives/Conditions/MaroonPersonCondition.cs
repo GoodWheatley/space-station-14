@@ -78,6 +78,9 @@ namespace Content.Server.Objectives.Conditions
                 if (!shuttleContainsTarget)
                     return 1f;
 
+                if (shuttleContainsTarget && !targetIsEscaping)
+                    return 1f;
+
                 return (shuttleContainsTarget && targetIsAlive && targetIsEscaping) ? 0f : 1f;
             }
         }

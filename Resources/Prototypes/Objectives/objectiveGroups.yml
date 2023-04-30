@@ -13,7 +13,7 @@
     CaptainIDStealObjective: 1
     CMOHyposprayStealObjective: 1
     RDHardsuitStealObjective: 0.75
-    NukeDiskStealObjective: 1
+    NukeDiskStealObjective: 0.75
     IDComputerBoardStealObjective: 1
     MagbootsStealObjective: 1
     VoidJetpackStealObjective: 1
@@ -24,6 +24,7 @@
     GoldmedalStealObjective: 1
     BronzeheartStealObjective: 1
     BeretHoSStealObjective: 0.5
+    HatHoPStealObjective: 0.5
     FireAxeStealObjective: 1
     CaptainSabreStealObjective: 1
     CaptainCarapaceStealObjective: 1
@@ -48,7 +49,7 @@
     EscapeShuttleObjective: 1
     DieObjective: 0.25
     StayAliveObjective: 0.5
-    HijackObjective: 0.25
+    HijackObjective: 0.1
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial
