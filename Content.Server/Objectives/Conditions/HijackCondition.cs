@@ -1,4 +1,5 @@
 using Content.Server.Objectives.Interfaces;
+using Content.Server.Shuttles.Components;
 using Content.Server.Station.Components;
 using Content.Server.Traitor;
 using JetBrains.Annotations;
@@ -15,7 +16,8 @@ namespace Content.Server.Objectives.Conditions
 
         public IObjectiveCondition GetAssigned(Mind.Mind mind)
         {
-            return new EscapeShuttleCondition {
+            return new HijackCondition
+            {
                 _mind = mind,
             };
         }
@@ -24,7 +26,7 @@ namespace Content.Server.Objectives.Conditions
 
         public string Description => Loc.GetString("objective-condition-hijack-shuttle-description");
 
-        public SpriteSpecifier Icon => new SpriteSpecifier.Rsi(new ResourcePath("Objects/Weapons/Melee/e_sword.rsi"), "icon");
+        public SpriteSpecifier Icon => new SpriteSpecifier.Rsi(new ResPath("Objects/Weapons/Melee/e_sword.rsi"), "icon");
 
         private bool IsAgentOnShuttle(TransformComponent agentXform, EntityUid? shuttle)
         {
@@ -54,7 +56,6 @@ namespace Content.Server.Objectives.Conditions
             {
                 return false;
             }
-            if
 
             return shuttleXform.WorldMatrix.TransformBox(shuttleGrid.LocalAABB).Contains(traitorXform.WorldPosition);
         }
@@ -73,17 +74,19 @@ namespace Content.Server.Objectives.Conditions
                 var shuttleContainsOnlyTraitors = false;
 
                 // Any emergency shuttle counts for this objective.
-                foreach (var stationData in entMan.EntityQuery<StationDataComponent>())
+                foreach (var stationData in entMan.EntityQuery<StationEmergencyShuttleComponent>())
                 {
-                    if (IsAgentOnShuttle(xform, stationData.EmergencyShuttle)) {
+                    if (IsAgentOnShuttle(xform, stationData.EmergencyShuttle))
+                    {
                         shuttleContainsAgent = true;
                         break;
                     }
                 }
 
-                foreach (var stationData in entMan.EntityQuery<StationDataComponent>())
+                foreach (var stationData in entMan.EntityQuery<StationEmergencyShuttleComponent>())
                 {
-                    if (IsEveryoneAliveOnShuttleATraitor(xform, stationData.EmergencyShuttle)) {
+                    if (IsEveryoneAliveOnShuttleATraitor(xform, stationData.EmergencyShuttle))
+                    {
                         shuttleContainsOnlyTraitors = true;
                         break;
                     }

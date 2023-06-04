@@ -1,4 +1,5 @@
 using Content.Server.Objectives.Interfaces;
+using Content.Server.Shuttles.Components;
 using Content.Server.Station.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Map.Components;
@@ -32,7 +33,7 @@ namespace Content.Server.Objectives.Conditions
 
         public string Description => Loc.GetString("objective-condition-maroon-person-description");
 
-        public SpriteSpecifier Icon => new SpriteSpecifier.Rsi(new ResourcePath("Objects/Specific/Medical/Morgue/bodybags.rsi"), "bag_folded");
+        public SpriteSpecifier Icon => new SpriteSpecifier.Rsi(new ResPath("Objects/Specific/Medical/Morgue/bodybags.rsi"), "bag_folded");
 
         private bool IsTargetOnShuttle(TransformComponent targetXform, EntityUid? shuttle)
         {
@@ -63,7 +64,7 @@ namespace Content.Server.Objectives.Conditions
                 var targetIsEscaping = true;
 
                 // Any emergency shuttle counts for this objective.
-                foreach (var stationData in entMan.EntityQuery<StationDataComponent>())
+                foreach (var stationData in entMan.EntityQuery<StationEmergencyShuttleComponent>())
                 {
                     if (IsTargetOnShuttle(xform, stationData.EmergencyShuttle))
                     {
