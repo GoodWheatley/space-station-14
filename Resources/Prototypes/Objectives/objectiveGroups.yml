@@ -40,14 +40,14 @@
   id: TraitorObjectiveGroupKill
   weights:
     KillRandomObjective: 1
-    KillRandomTraitorObjective: 0.5
-    MaroonRandomObjective: 0.75
+    KillRandomTraitorObjective: 0.3
+    MaroonRandomObjective: 1
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 1
-    DieObjective: 0.25
+    DieObjective: 0.1
     StayAliveObjective: 0.5
     HijackObjective: 0.1
 
